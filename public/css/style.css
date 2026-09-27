@@ -56,3 +56,29 @@ input[type="submit"] {
     padding: .375rem 1rem;
     margin-top: 10px;
 }
+
+table {
+    margin: 1rem;
+    border-collapse: collapse;
+    width: calc(100% - 2rem);
+}
+
+th, td {
+    padding: .625rem 1rem;
+    text-align: left;
+    border-bottom: solid 1px lightgrey;
+}
+
+th {
+    border-bottom: solid 2px grey;
+}
+
+tbody tr:hover {
+    background-color: whitesmoke;
+}
+
+.table-link {
+    display: inline-block;
+    margin: 0 1rem;
+    color: #0091ae;
+}
