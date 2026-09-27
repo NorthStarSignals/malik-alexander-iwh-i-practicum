@@ -41,7 +41,24 @@ app.get('/update-cobj', async (req, res) => {
 
 // TODO: ROUTE 3 - Create a new app.post route for the custom objects form to create or update your custom object data. Once executed, redirect the user to the homepage.
 
-// * Code for Route 3 goes here
+app.post('/update-cobj', async (req, res) => {
+    const newStar = {
+        properties: {
+            name: req.body.name,
+            constellation: req.body.constellation,
+            bio: req.body.bio
+        }
+    };
+
+    const createStar = `https://api.hubapi.com/crm/v3/objects/${CUSTOM_OBJECT_TYPE}`;
+
+    try {
+        await axios.post(createStar, newStar, { headers });
+        res.redirect('/');
+    } catch (err) {
+        console.error(err);
+    }
+});
 
 // * Localhost
 app.listen(3000, () => console.log('Listening on http://localhost:3000'));
